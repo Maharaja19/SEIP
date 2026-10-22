@@ -1,0 +1,194 @@
+.navbar {
+  background: linear-gradient(90deg, var(--card-bg), rgba(37, 99, 235, 0.05));
+  box-shadow: var(--shadow-md);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.navbar:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.logo img {
+  height: 45px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+}
+
+.menuIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--text-primary);
+  border-radius: 2px;
+}
+
+.profileSection {
+  position: relative;
+}
+
+.profileIcon {
+  background: linear-gradient(135deg, var(--primary-color));
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.profileIcon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 120%;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  padding: 1rem;
+  min-width: 200px;
+  animation: fadeIn 0.2s ease-in-out;
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+  transform-origin: top right;
+}
+
+.dropdown::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid var(--card-bg);
+}
+
+.dropdown p {
+  margin: 0.3rem 0;
+  color: var(--text-primary);
+}
+
+.logoutBtn,
+.loginBtn {
+  background: var(--btn-danger-bg);
+  border: none;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.logoutBtn:hover,
+.loginBtn:hover {
+  background: var(--btn-danger-hover);
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background: var(--card-bg);
+  box-shadow: var(--shadow-lg);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease-in-out;
+  z-index: 1200;
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.drawer h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.drawer ul {
+  list-style: none;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.drawer li {
+  padding: 0.75rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+.drawer li:hover {
+  background: var(--bg-secondary);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1100;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menuBtn {
+    display: block;
+  }
+
+  .profileIcon {
+    font-size: 1.6rem;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+}

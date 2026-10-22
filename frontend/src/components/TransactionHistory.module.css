@@ -1,0 +1,106 @@
+.historySection {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+  padding: var(--spacing-lg);
+}
+
+.sectionTitle {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.transactionsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.transactionItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+}
+
+.transactionInfo {
+  flex: 1;
+}
+
+.transactionDesc {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.transactionMeta {
+  display: flex;
+  gap: var(--spacing-lg);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+.transactionAmount {
+  font-weight: 700;
+  margin: 0 var(--spacing-lg);
+}
+
+.income {
+  color: var(--success-color);
+}
+
+.expense {
+  color: var(--danger-color);
+}
+
+.transactionActions {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.btnDelete {
+  background: var(--btn-danger-bg);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm);
+  cursor: pointer;
+  font-size: var(--text-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnDelete:hover {
+  background: var(--btn-danger-hover);
+}
+
+.noTransactions {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--text-secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .transactionItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+  
+  .transactionInfo {
+    width: 100%;
+  }
+  
+  .transactionMeta {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+  
+  .transactionActions {
+    align-self: flex-end;
+  }
+}
